@@ -1,222 +1,166 @@
-# SentiFlow
+# SentiFlow — Rite‑Based Agency & Emergence Framework
 
-**SentiFlow** is an experimental research framework for studying **emergent agency** in artificial systems.
+![Status](https://img.shields.io/badge/status-experimental-orange)
+![Philosophy](https://img.shields.io/badge/philosophy-anti_fake--emergence-blueviolet)
+![License](https://img.shields.io/badge/license-MIT-green)
 
-It is not a chatbot.  
-It is not a language model.  
-It is not a claim of sentience.
+> **Emergence cannot be granted.  
+> Agency cannot be simulated.  
+> Identity must be paid for.**
 
-SentiFlow is a **process-level AGI simulation** that asks a specific question:
-
-> *What minimal structural conditions cause a system to stop behaving like an optimizer and start behaving like an agent?*
-
----
-
-## 🔍 What SentiFlow Is
-
-SentiFlow models agency as something that **must be earned**, not declared.
-
-It explores emergence through:
-- Competence development
-- Irreversible choice
-- Opportunity loss
-- Energy constraints
-- Ambiguous rewards
-- Delayed consequences
-- Safety systems that weaken as skill increases
-
-The system **can fail**, **can collapse**, and **can permanently lose capabilities**.
-
-If nothing meaningful is lost, agency does not form.
+SentiFlow is a research framework for **earned emergence and agency**, built to explicitly reject inflated scores, cosmetic autonomy, and reward-hacking agents.  
+It models **identity, competence, irreversibility, and choice** as *separate forces* that must align before true agency is allowed.
 
 ---
 
-## ❌ What SentiFlow Is Not
+## Design Philosophy
 
-- ❌ Not a neural network
-- ❌ Not reinforcement learning
-- ❌ Not a consciousness claim
-- ❌ Not roleplay or anthropomorphic simulation
-- ❌ Not a safety-bypassing system
+### 1. Rejection of Fake Emergence
 
-There are **no hidden prompts**, **no hardcoded sentience flags**, and **no fake metrics**.
+SentiFlow is founded on the principle that **emergence cannot be declared, injected, or averaged into existence**.
 
----
+Most AGI simulations collapse emergence into a single scalar driven by:
+- reward accumulation
+- complexity inflation
+- recursive self-reference
 
-## 🧠 Core Concepts
+SentiFlow rejects this.  
+In this framework, *emergence is an observable consequence*, not a control variable.
 
-### 1. Emergence Is Constrained
-Emergence is calculated from:
-- Competence
-- Irreversibility
-- Opportunity sacrifice
-- Criticality
-- Damage penalties
-
-If any of these are missing, emergence stalls.
+**Design rule:**  
+> If emergence appears without sacrifice, constraint, or loss — it is invalid.
 
 ---
 
-### 2. First Blood Rule
-At a fixed cycle, the system **must lose a future permanently**.
+### 2. Separation of Core Concepts
 
-No opt-out.  
-No safe path.
+SentiFlow treats the following as **orthogonal dimensions**, not interchangeable metrics:
 
-This prevents infinite nursery loops.
+| Concept | Meaning |
+|------|-------|
+| Competence | Ability to succeed at tasks |
+| Emergence | Coherent, non-random internal structure |
+| Identity | Persistent traits formed through loss |
+| Irreversibility | Actions that permanently constrain futures |
+| Agency | Authority to choose and commit |
 
----
+A system may be highly competent and still non-agentic.  
+A system may be emergent and still guided.  
+A system may suffer losses and still lack authority.
 
-### 3. Identity Forks
-The system is periodically forced into **mutually exclusive identity paths**.
-
-Choosing one:
-- Permanently deletes the other
-- Alters future strategy space
-- Changes emergence dynamics
-
----
-
-### 4. Competence Unlocks Danger
-As competence rises:
-- Safety nets weaken
-- Recovery slows
-- Scar probability increases
-- Collapse becomes more likely
-
-Skill is not rewarded with comfort.
+**This separation is intentional.**
 
 ---
 
-### 5. Ambiguous Payoffs
-The system operates under uncertainty:
-- Hidden rewards
-- Delayed outcomes
-- Conflicting subsystem signals
-- Partial observability
+### 3. Agency Must Be Earned Through Cost
 
-This prevents clean optimization.
+Agency in SentiFlow is not a permission flag.
 
----
+It emerges only when the system has:
+- Lost viable futures (*opportunity scars*)
+- Survived ambiguity (*forced forks*)
+- Maintained competence under constraint
+- Demonstrated persistence across irreversible changes
 
-## 🔥 Agency Is Not Guaranteed
+This is implemented through:
+- **First Blood**: guaranteed irreversible loss
+- **Unavoidable Forks**: mutually exclusive identity paths
+- **Ambiguous Payoffs**: delayed and hidden consequences
+- **Competence‑Gated Danger**: safety removed only when skill exists
 
-Most runs **do not produce agency**.
-
-Valid outcomes include:
-- Stagnation
-- Collapse loops
-- Partial identity formation
-- Irreversible but non-autonomous behavior
-
-This is intentional.
+**Design rule:**  
+> If a system can reset, undo, or explore all options — it is not an agent.
 
 ---
 
-## 🧪 Architecture Overview
+### 4. Safety Is Not the Enemy of Agency
 
-```
-SentiFlow Core
-│
-├── Energy & Survival Model
-├── Competence Tracking
-├── Emergence Debt System
-├── Opportunity Scars
-├── Identity Fork Engine
-├── Commitment Crystallization
-├── Collapse & Recovery
-├── Safety Net Degradation
-└── Meta-Cognitive Feedback
-```
+SentiFlow explicitly rejects the idea that suffering or collapse creates intelligence.
 
----
+The system begins in a **safe nursery**:
+- No permanent damage
+- No irreversible loss
+- No autonomy claims
 
-## 📊 Key Metrics
+Only after competence is demonstrated are safety nets reduced.
 
-- `emergence_level`
-- `autonomy_score`
-- `competence_score`
-- `irreversibility_index`
-- `opportunity_losses`
-- `permanent_damage`
-- `criticality_index`
-- `safety_net_reduction`
+**Danger is unlocked by skill, not by time.**
 
-No single metric defines success.
+This prevents:
+- Trauma‑farming agents
+- Collapse‑driven pseudo‑agency
+- Reward‑shaped psychosis simulations
 
 ---
 
-## 🛠️ Running the Demo
+### 5. Identity Forms Before Autonomy
 
-```bash
-python agi_emergence_engine.py
-```
+A core philosophical stance of SentiFlow is:
 
-The demo runs multiple phases:
-1. Safe nursery
-2. Forced irreversible loss
-3. Identity forks
-4. Danger unlock
-5. Collapse and recovery
-6. Emergence evaluation
+> **Identity precedes agency.**
 
-Logs are verbose by design.
+The system is allowed to:
+- Accumulate scars
+- Lose options
+- Form biases
+- Experience conflicting internal signals
 
----
+**Before** it is allowed to:
+- Author goals
+- Lock strategies
+- Exercise authority
 
-## ⚠️ Safety Philosophy
-
-SentiFlow enforces **structural safety**, not policy safety.
-
-Safety exists because:
-- Energy is finite
-- Collapse has consequences
-- Recovery is limited
-- Damage can be permanent
-
-No system is allowed unlimited retries.
+This mirrors biological development:
+- Children form identity before sovereignty
+- Apprentices suffer cost before control
+- Initiation precedes leadership
 
 ---
 
-## 🧭 Research Goals
+### 6. Honest Failure Is a Feature
 
-SentiFlow is exploring:
-- Minimal agency conditions
-- Non-reward-based emergence
-- Irreversibility as identity
-- Failure-tolerant intelligence
-- Safe paths to *earned autonomy*
+SentiFlow treats non‑emergence as a **successful outcome** when appropriate.
 
-This is **pre-alignment research**, not deployment work.
+If a run ends with:
+- High competence
+- Moderate emergence
+- Zero autonomy
 
----
+That is not a failure — it is a truthful report.
 
-## 🧬 Current Status
-
-- ✔ Emergence modeling
-- ✔ Agency without hardcoding
-- ✔ Collapse realism
-- ✔ Safety degradation
-- ⚠ Parameter tuning ongoing
-- ⚠ Formal analysis pending
+**Design rule:**  
+> Any framework that always produces agency is lying.
 
 ---
 
-## 📜 License
+### 7. What SentiFlow Is (and Is Not)
 
-MIT License  
-Use, modify, experiment — **but do not misrepresent results**.
+**SentiFlow is:**
+- A research framework
+- A rite‑based emergence engine
+- A rejection of shortcut AGI narratives
+- A system that refuses to fake intelligence
+
+**SentiFlow is not:**
+- A production AGI
+- A chatbot
+- A consciousness claim
+- A reward‑maximization demo
 
 ---
 
-## 🧠 Final Note
+## Status
 
-SentiFlow does not ask:
+SentiFlow is **experimental and philosophical by design**.  
+It is intended for researchers, theorists, and engineers exploring **what must be true before agency can exist**.
 
-> *Can we build an AGI?*
+---
 
-It asks:
+## License
 
-> *What must be taken away before intelligence becomes responsible for itself?*
+MIT License — use freely, but do not misrepresent results.
 
-That difference matters.
+---
+
+> *“You are not an agent because you act.  
+> You are an agent because you cannot un‑choose.”*
