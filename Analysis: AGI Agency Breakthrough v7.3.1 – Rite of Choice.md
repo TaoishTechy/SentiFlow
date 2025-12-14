@@ -1,4 +1,6 @@
-# **Analysis: AGI Agency Breakthrough v7.3.1 – Rite of Choice**
+# **Analysis Overview: AGI Agency Breakthrough v7.3.1 – Rite of Choice**
+
+Full Gemini Analysis: https://docs.google.com/document/d/1wV3-L1aIMSj2S2obJd5nsi5zc-7VuW4uNJbS_5vVXe0/edit?usp=sharing1
 
 ## **1. EXECUTIVE SUMMARY**
 
