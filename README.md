@@ -217,7 +217,6 @@ This project is licensed under the MIT License. See the [LICENSE](LICENSE) file 
 
 *   📝 **Issue Tracker**: Report bugs or request features on GitHub Issues
 *   💬 **Discussion Forum**: Join theoretical and technical discussions
-*   📧 **Contact**: taoistechy@example.com
 
 ## 📈 Recent Developments
 
