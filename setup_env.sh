@@ -1,8 +1,8 @@
 #!/bin/bash
-# setup_venv.sh - Automated virtual environment setup
+# setup_env.sh - Automated virtual environment setup for SentiFlow
 
 echo "================================================"
-echo "  QuantumCore Nexus - Virtual Environment Setup"
+echo "  SentiFlow AGI Framework - Environment Setup"
 echo "================================================"
 
 # Check if Python 3 is installed
@@ -49,31 +49,44 @@ elif command -v brew &> /dev/null; then
 fi
 
 # Install full requirements
-echo "Installing full requirements..."
-pip install -r requirements.txt
+if [ -f "requirements.txt" ]; then
+    echo "Installing full requirements..."
+    pip install -r requirements.txt
+else
+    echo "⚠️  requirements.txt not found. Installing core packages..."
+    pip install numpy scipy matplotlib psutil pyyaml requests tqdm pandas pytest
+fi
 
-# Install in development mode
-echo "Installing QuantumCore Nexus in development mode..."
+# Install SentiFlow in development mode
+echo "Installing SentiFlow in development mode..."
 pip install -e .
 
-# Download external modules
-read -p "Download external modules from GitHub? (y/n): " -n 1 -r
-echo
-if [[ $REPLY =~ ^[Yy]$ ]]; then
-    echo "Downloading external modules..."
-    python scripts/download_modules.py
+# Download external modules (optional)
+if [ -f "scripts/download_modules.py" ]; then
+    read -p "Download external quantum modules? (y/n): " -n 1 -r
+    echo
+    if [[ $REPLY =~ ^[Yy]$ ]]; then
+        echo "Downloading external modules..."
+        python scripts/download_modules.py
+    fi
+else
+    echo "ℹ️  External module script not found. Skipping download."
 fi
 
 echo "================================================"
-echo "✅ Setup complete! Virtual environment is ready."
+echo "✅ SentiFlow setup complete! Virtual environment is ready."
 echo ""
 echo "To activate the virtual environment:"
 echo "  source venv/bin/activate"
 echo ""
-echo "To run QuantumCore Nexus:"
-echo "  python main.py"
+echo "To run tests (recommended first step):"
+echo "  python examples/qubit_test_32.py"
 echo "  OR"
-echo "  quantumcore-nexus"
+echo "  pytest tests/"
+echo ""
+echo "Available CLI commands:"
+echo "  sentiflow    - Main SentiFlow interface"
+echo "  qnvm         - Quantum Network Virtual Machine"
 echo ""
 echo "To deactivate the virtual environment:"
 echo "  deactivate"
