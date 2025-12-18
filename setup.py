@@ -9,7 +9,8 @@ def read_requirements():
     if os.path.exists(req_file):
         with open(req_file, 'r') as f:
             return [line.strip() for line in f if line.strip() and not line.startswith('#')]
-    return []
+    # Fallback to core dependencies
+    return ['numpy>=1.21.0', 'scipy>=1.7.0']
 
 def read_version():
     """Read version from __init__.py in the main package"""
@@ -41,6 +42,65 @@ def read_long_description():
                 return f.read()
     return "SentiFlow: Experimental AGI Research Framework"
 
+# Define package groups
+quantum_core = [
+    'numpy>=1.21.0',
+    'scipy>=1.7.0',
+    'psutil>=5.8.0',
+    'h5py>=3.6.0',
+]
+
+visualization = [
+    'matplotlib>=3.4.0',
+    'plotly>=5.10.0',
+    'seaborn>=0.11.0',
+]
+
+cli = [
+    'click>=8.0.0',
+    'rich>=12.0.0',
+    'tqdm>=4.62.0',
+]
+
+data_processing = [
+    'pandas>=1.3.0',
+    'pyyaml>=6.0',
+]
+
+networking = [
+    'requests>=2.26.0',
+    'aiohttp>=3.8.0',
+]
+
+testing = [
+    'pytest>=7.0.0',
+    'pytest-cov>=4.0.0',
+    'pytest-asyncio>=0.18.0',
+    'pytest-benchmark>=3.4.0',
+]
+
+dev_tools = [
+    'black>=22.0.0',
+    'flake8>=5.0.0',
+    'mypy>=0.991',
+    'pre-commit>=2.20.0',
+    'memory-profiler>=0.60.0',
+]
+
+documentation = [
+    'sphinx>=4.0.0',
+    'sphinx-rtd-theme>=0.5.0',
+    'sphinx-autodoc-typehints>=1.18.0',
+    'myst-parser>=0.18.0',
+]
+
+# Optional quantum frameworks (commented out by default)
+quantum_frameworks = [
+    # 'qiskit>=0.39.0',  # IBM Quantum integration
+    # 'cirq>=0.14.0',    # Google Quantum integration
+    # 'networkx>=2.6.0', # For quantum circuit graph analysis
+]
+
 setup(
     name="sentiflow",
     version=read_version(),
@@ -48,7 +108,7 @@ setup(
     long_description=read_long_description(),
     long_description_content_type="text/markdown",
     author="TaoishTechy",
-    author_email="",  # Consider adding a contact email
+    author_email="",  # Add contact email if desired
     url="https://github.com/TaoishTechy/SentiFlow",
     project_urls={
         "Bug Tracker": "https://github.com/TaoishTechy/SentiFlow/issues",
@@ -58,42 +118,38 @@ setup(
     package_dir={"": "src"},
     packages=find_packages(where="src", include=['qnvm*', 'sentiflow*', 'quantum_core_nexus*']),
     include_package_data=True,
-    install_requires=read_requirements(),
+    install_requires=quantum_core,  # Core quantum dependencies only
+    
+    # Enhanced extras_require with logical grouping
     extras_require={
-        'full': [
-            'numpy>=1.21.0',
-            'scipy>=1.7.0',
-            'matplotlib>=3.4.0',
-            'pyyaml>=6.0',
-            'requests>=2.26.0',
-            'psutil>=5.8.0',
-            'tqdm>=4.62.0',
-            'pandas>=1.3.0',
-            'pytest>=7.0.0',  # Added based on test suite usage
-        ],
-        'quantum': [
-            'numpy>=1.21.0',
-            'scipy>=1.7.0',
-            'psutil>=5.8.0',
-        ],
-        'minimal': [
-            'numpy>=1.21.0',
-        ],
-        'dev': [
-            'pytest>=7.0.0',
-            'pytest-cov>=4.0.0',
-            'black>=22.0.0',
-            'flake8>=5.0.0',
-            'mypy>=0.991',
-        ]
+        'core': quantum_core,
+        'visualization': visualization,
+        'cli': cli,
+        'data': data_processing,
+        'networking': networking,
+        'testing': testing,
+        'dev': dev_tools,
+        'docs': documentation,
+        'quantum-extras': quantum_frameworks,
+        
+        # Composite extras
+        'full': quantum_core + visualization + cli + data_processing + networking,
+        'complete': quantum_core + visualization + cli + data_processing + 
+                   networking + testing + dev_tools + documentation,
+        'minimal': ['numpy>=1.21.0', 'scipy>=1.7.0'],
     },
+    
+    # Console scripts
     entry_points={
         'console_scripts': [
-            'sentiflow=qnvm.cli_main:main',  # Updated to point to actual CLI
+            'sentiflow=qnvm.cli_main:main',
             'qnvm=qnvm.cli_main:main',
             'sentiflow-test=qnvm.cli_demos:main',
+            'sentiflow-benchmark=examples.qubit_test_32:main',
         ],
     },
+    
+    # Package classifiers
     classifiers=[
         "Development Status :: 4 - Beta",
         "Intended Audience :: Science/Research",
@@ -105,15 +161,22 @@ setup(
         "Programming Language :: Python :: 3.8",
         "Programming Language :: Python :: 3.9",
         "Programming Language :: Python :: 3.10",
-        "Programming Language :: 3.11",
+        "Programming Language :: Python :: 3.11",
         "Programming Language :: Python :: 3.12",
         "Topic :: Scientific/Engineering",
         "Topic :: Scientific/Engineering :: Artificial Intelligence",
         "Topic :: Scientific/Engineering :: Physics",
         "Topic :: Scientific/Engineering :: Mathematics",
         "Topic :: System :: Emulators",
+        "Topic :: Software Development :: Libraries :: Python Modules",
     ],
+    
     python_requires=">=3.8",
-    keywords="AGI, quantum computing, simulation, emergent agency, cognitive architecture, quantum mechanics",
+    keywords="AGI, quantum computing, simulation, emergent agency, "
+             "cognitive architecture, quantum mechanics, artificial intelligence",
     license="MIT",
+    
+    # Additional metadata
+    platforms=["Linux", "Mac OS-X", "Windows"],
+    zip_safe=False,
 )
