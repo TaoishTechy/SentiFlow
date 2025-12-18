@@ -2,15 +2,73 @@
 version: '3.8'
 
 services:
-  quantumcore-nexus:
-    build: .
-    container_name: quantumcore-nexus
+  sentiflow:
+    build: 
+      context: .
+      dockerfile: Dockerfile
+    container_name: sentiflow
+    restart: unless-stopped
     volumes:
       - ./logs:/app/logs
       - ./config:/app/config
       - ./data:/app/data
+      - ./examples:/app/examples
+      - ./tests:/app/tests
+      - ./src:/app/src
     environment:
       - PYTHONUNBUFFERED=1
+      - PYTHONPATH=/app/src
+      - MAX_QUBITS=32
+      - MAX_MEMORY_GB=4.0
+      - QNVM_BACKEND=internal
+    ports:
+      - "8080:8080"  # For future web interface
+      - "8888:8888"  # For Jupyter notebooks (optional)
     stdin_open: true
     tty: true
-    command: python main.py
+    command: sentiflow --help
+    healthcheck:
+      test: ["CMD", "python", "-c", "import qnvm; print('Health check passed')"]
+      interval: 30s
+      timeout: 10s
+      retries: 3
+      start_period: 40s
+
+  # Optional: Add a test runner service
+  sentiflow-tests:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: sentiflow-tests
+    volumes:
+      - ./tests:/app/tests
+      - ./examples:/app/examples
+      - ./src:/app/src
+    environment:
+      - PYTHONPATH=/app/src
+      - PYTHONUNBUFFERED=1
+    command: pytest tests/ -v --tb=short
+    
+  # Optional: Add a Jupyter service for interactive development
+  jupyter:
+    image: jupyter/scipy-notebook:latest
+    container_name: sentiflow-jupyter
+    ports:
+      - "8888:8888"
+    volumes:
+      - ./notebooks:/home/jovyan/work
+      - ./src:/home/jovyan/sentiflow/src
+      - ./examples:/home/jovyan/sentiflow/examples
+    environment:
+      - JUPYTER_ENABLE_LAB=yes
+      - JUPYTER_TOKEN=sentiflow
+    command: start-notebook.sh --NotebookApp.token='sentiflow'
+
+volumes:
+  sentiflow-logs:
+  sentiflow-data:
+  sentiflow-config:
+
+networks:
+  sentiflow-network:
+    driver: bridge
