@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 """
-QYLINTOS v30 — FINAL DEBUGGED VERSION
+QYLINTOS v3.0 — FINAL DEBUGGED VERSION
 December 2024
 
 • Fixed circular statistics (phase_std now correct)
