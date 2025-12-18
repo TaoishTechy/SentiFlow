@@ -1,144 +1,115 @@
+# /src/external/__init__.py
 """
-External modules for QNVM - Simplified version
-Only include modules that actually exist
+External quantum computing modules and utilities.
+Provides tensor networks, fidelity calculations, and other quantum tools.
 """
 
-# Create minimal placeholder classes for now
-class TensorNetwork:
-    def __init__(self, num_qubits):
-        self.num_qubits = num_qubits
-
-class MPS:
-    def __init__(self, num_qubits):
-        self.num_qubits = num_qubits
-
-class ContractOptimizer:
-    pass
-
-class QuantumMemoryManager:
-    def __init__(self, max_memory_gb=8.0):
-        self.max_memory_gb = max_memory_gb
+# Tensor network implementations
+try:
+    from .tensor_network import TensorNetwork, MatrixProductState, TensorTrain
+    HAS_TENSOR_NETWORK = True
+except ImportError as e:
+    print(f"⚠️  TensorNetwork import error: {e}")
+    HAS_TENSOR_NETWORK = False
     
-    def allocate_state(self, *args, **kwargs):
-        return {'representation': 'dense', 'compression_ratio': 1.0}
-    
-    def get_memory_stats(self):
-        return {'quantum_memory_usage_gb': 0.1}
-    
-    def clear_all(self):
-        pass
-
-class QuantumProcessor:
-    def __init__(self, num_qubits=32):
-        self.num_qubits = num_qubits
-    
-    def execute_gate(self, *args, **kwargs):
-        return 0.0
-    
-    def get_processor_fidelity(self):
-        return 0.99
-
-class VirtualQubit:
-    pass
-
-class QubitProperties:
-    pass
-
-class QubitState:
-    GROUND = 0
-
-# Minimal error correction
-class SurfaceCode:
-    def __init__(self, distance=3):
-        self.distance = distance
-
-class NeuralMWPMDecoder:
-    def decode(self, *args, **kwargs):
-        return []
-
-class QuantumErrorCorrection:
-    def __init__(self, *args, **kwargs):
+    # Define placeholder classes
+    class TensorNetwork:
+        """Placeholder for tensor network implementation"""
         pass
     
-    def run_correction_cycle(self, state, *args, **kwargs):
-        return state
-    
-    def get_statistics(self):
-        return {}
-
-# Minimal quantum operations
-class QuantumGate:
-    pass
-
-class GateCompiler:
-    pass
-
-class LogicalOperationCompiler:
-    pass
-
-# Minimal state representations
-class SparseQuantumState:
-    def __init__(self, *args, **kwargs):
+    class MatrixProductState:
+        """Placeholder for MPS implementation"""
         pass
     
-    def from_dense(self, state):
-        return self
+    class TensorTrain:
+        """Placeholder for tensor train implementation"""
+        pass
+
+# Fidelity calculations
+try:
+    from .fidelity_fix import (
+        FidelityCalculator,
+        StateVerification,
+        QuantumMetrics,
+        validate_quantum_state,
+        calculate_state_fidelity,
+        calculate_gate_fidelity
+    )
+    HAS_FIDELITY = True
+except ImportError as e:
+    print(f"⚠️  Fidelity module import error: {e}")
+    HAS_FIDELITY = False
     
-    def to_dense(self):
-        import numpy as np
-        return np.array([])
+    # Define placeholder classes for fidelity
+    class FidelityCalculator:
+        """Placeholder for fidelity calculator"""
+        @staticmethod
+        def calculate_state_fidelity(ideal_state, actual_state):
+            return 0.0
+    
+    class StateVerification:
+        """Placeholder for state verification"""
+        pass
+    
+    class QuantumMetrics:
+        """Placeholder for quantum metrics"""
+        pass
 
-class CompressedState:
-    def compress(self, state, *args, **kwargs):
-        return state
+# Quantum memory management
+try:
+    from .memory_manager import QuantumMemoryManager, MemoryAllocator
+    HAS_MEMORY_MANAGER = True
+except ImportError as e:
+    print(f"⚠️  MemoryManager import error: {e}")
+    HAS_MEMORY_MANAGER = False
+    
+    class QuantumMemoryManager:
+        """Placeholder for quantum memory manager"""
+        pass
+    
+    class MemoryAllocator:
+        """Placeholder for memory allocator"""
+        pass
 
-# Minimal compression
-class StateCompressor:
-    pass
-
-# Minimal validation
-class QuantumStateValidator:
-    def validate_state(self, state):
-        return {'valid': True, 'errors': []}
-
-class GroundTruthVerifier:
-    pass
-
-# Minimal backends
-class QiskitBackend:
-    pass
-
-class CirqBackend:
-    pass
-
-class BackendManager:
-    pass
-
+# Export main classes
 __all__ = [
-    # Tensor network
-    'TensorNetwork', 'MPS', 'ContractOptimizer',
+    # Tensor networks
+    'TensorNetwork',
+    'MatrixProductState',
+    'TensorTrain',
+    'HAS_TENSOR_NETWORK',
+    
+    # Fidelity
+    'FidelityCalculator',
+    'StateVerification',
+    'QuantumMetrics',
+    'HAS_FIDELITY',
     
     # Memory management
     'QuantumMemoryManager',
+    'MemoryAllocator',
+    'HAS_MEMORY_MANAGER',
     
-    # Quantum processing
-    'QuantumProcessor', 'VirtualQubit', 'QubitProperties', 'QubitState',
-    
-    # Error correction
-    'QuantumErrorCorrection', 'SurfaceCode', 'NeuralMWPMDecoder',
-    
-    # Quantum operations
-    'QuantumGate', 'GateCompiler', 'LogicalOperationCompiler',
-    
-    # State representations
-    'SparseQuantumState', 'CompressedState',
-    
-    # Compression
-    'StateCompressor',
-    
-    # Validation
-    'QuantumStateValidator', 'GroundTruthVerifier',
-    
-    # Backend integration
-    'QiskitBackend', 'CirqBackend', 'BackendManager'
+    # Helper functions
+    'check_dependencies',
+    'get_available_features'
 ]
+
+def check_dependencies():
+    """Check which dependencies are available"""
+    return {
+        'tensor_network': HAS_TENSOR_NETWORK,
+        'fidelity': HAS_FIDELITY,
+        'memory_manager': HAS_MEMORY_MANAGER
+    }
+
+def get_available_features():
+    """Get list of available features"""
+    features = []
+    if HAS_TENSOR_NETWORK:
+        features.append('tensor_networks')
+    if HAS_FIDELITY:
+        features.append('fidelity_calculations')
+    if HAS_MEMORY_MANAGER:
+        features.append('memory_management')
+    return features
