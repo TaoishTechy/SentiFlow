@@ -1,0 +1,80 @@
+{
+  "timestamp": "2025-12-18T12:02:09.227779",
+  "tests": [
+    {
+      "description": "2 qutrits",
+      "num_qudits": 2,
+      "dimension": 3,
+      "hilbert_size": 9,
+      "memory_gb": 6.705522537231445e-08,
+      "ghz_time": 0.00015306472778320312,
+      "chi_squared": 4.22,
+      "max_deviation": 0.050000000000000044
+    },
+    {
+      "description": "3 qubits",
+      "num_qudits": 3,
+      "dimension": 2,
+      "hilbert_size": 8,
+      "memory_gb": 5.960464477539063e-08,
+      "ghz_time": 3.2901763916015625e-05,
+      "chi_squared": 2.88,
+      "max_deviation": 0.06000000000000005
+    },
+    {
+      "description": "4 qutrits",
+      "num_qudits": 4,
+      "dimension": 3,
+      "hilbert_size": 81,
+      "memory_gb": 6.034970283508301e-07,
+      "ghz_time": 8.0108642578125e-05,
+      "chi_squared": 0.74,
+      "max_deviation": 0.023333333333333373
+    },
+    {
+      "description": "5 qubits",
+      "num_qudits": 5,
+      "dimension": 2,
+      "hilbert_size": 32,
+      "memory_gb": 2.384185791015625e-07,
+      "ghz_time": 6.008148193359375e-05,
+      "chi_squared": 0.98,
+      "max_deviation": 0.03500000000000003
+    },
+    {
+      "description": "6 qubits",
+      "num_qudits": 6,
+      "dimension": 2,
+      "hilbert_size": 64,
+      "memory_gb": 4.76837158203125e-07,
+      "ghz_time": 9.107589721679688e-05,
+      "chi_squared": 0.32,
+      "max_deviation": 0.020000000000000018
+    },
+    {
+      "description": "7 qubits",
+      "num_qudits": 7,
+      "dimension": 2,
+      "hilbert_size": 128,
+      "memory_gb": 9.5367431640625e-07,
+      "ghz_time": 0.00014972686767578125,
+      "chi_squared": 0.72,
+      "max_deviation": 0.030000000000000027
+    },
+    {
+      "description": "8 qubits",
+      "num_qudits": 8,
+      "dimension": 2,
+      "hilbert_size": 256,
+      "memory_gb": 1.9073486328125e-06,
+      "ghz_time": 0.0002932548522949219,
+      "chi_squared": 3.38,
+      "max_deviation": 0.065
+    }
+  ],
+  "summary": {
+    "total_tests": 7,
+    "successful_tests": 7,
+    "average_chi_squared": 1.8914285714285717
+  }
+}

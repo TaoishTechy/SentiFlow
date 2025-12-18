@@ -1,0 +1,141 @@
+{
+  "timestamp": "20251218_120007",
+  "configuration": {
+    "max_qubits": 32,
+    "use_real": true,
+    "memory_limit_gb": 4.0,
+    "qnvm_available": true,
+    "advanced_modules": true
+  },
+  "statistics": {
+    "total_tests": 10,
+    "completed": 10,
+    "failed": 0,
+    "skipped": 0,
+    "warning": 0,
+    "total_time": 1.0442020893096924,
+    "peak_memory_mb": 38.296875
+  },
+  "test_results": [
+    {
+      "name": "State Initialization",
+      "status": "completed",
+      "execution_time": 0.0012547969818115234,
+      "memory_used_mb": 0.14453125,
+      "cpu_percent": 5.0,
+      "average_fidelity": 1.0,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    },
+    {
+      "name": "Single-Qubit Gates",
+      "status": "completed",
+      "execution_time": 0.0021347999572753906,
+      "memory_used_mb": 0.33203125,
+      "cpu_percent": 2.9333333333333336,
+      "average_fidelity": 0.9990004998333751,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    },
+    {
+      "name": "Two-Qubit Gates",
+      "status": "completed",
+      "execution_time": 0.00043487548828125,
+      "memory_used_mb": 0,
+      "cpu_percent": 3.4,
+      "average_fidelity": 0.9980019986673331,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    },
+    {
+      "name": "Bell State Creation",
+      "status": "completed",
+      "execution_time": 0.0006923675537109375,
+      "memory_used_mb": 0,
+      "cpu_percent": 3.3666666666666667,
+      "average_fidelity": 0.9980019986673331,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    },
+    {
+      "name": "GHZ State Scaling",
+      "status": "completed",
+      "execution_time": 0.0021741390228271484,
+      "memory_used_mb": 0.00390625,
+      "cpu_percent": 2.1,
+      "average_fidelity": 0.996008985352263,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    },
+    {
+      "name": "Random Circuits",
+      "status": "completed",
+      "execution_time": 0.0006692409515380859,
+      "memory_used_mb": 0.00390625,
+      "cpu_percent": 2.9000000000000004,
+      "average_fidelity": 0.9940179640539353,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    },
+    {
+      "name": "Entanglement Generation",
+      "status": "completed",
+      "execution_time": 0.0006437301635742188,
+      "memory_used_mb": 0,
+      "cpu_percent": 3.3000000000000003,
+      "average_fidelity": 0.9960079893439915,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    },
+    {
+      "name": "Measurement Statistics",
+      "status": "completed",
+      "execution_time": 0.009901285171508789,
+      "memory_used_mb": 6.9453125,
+      "cpu_percent": 2.1,
+      "average_fidelity": 0.9986864490267212,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    },
+    {
+      "name": "Memory Scaling",
+      "status": "completed",
+      "execution_time": 0.005587577819824219,
+      "memory_used_mb": 0.1875,
+      "cpu_percent": 1.2666666666666666,
+      "average_fidelity": null,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    },
+    {
+      "name": "Performance Benchmark",
+      "status": "completed",
+      "execution_time": 0.006928443908691406,
+      "memory_used_mb": 0.0703125,
+      "cpu_percent": 2.9,
+      "average_fidelity": 0.9801986733067553,
+      "qubits_tested": 0,
+      "gates_executed": 0,
+      "error_message": null,
+      "warning_message": null
+    }
+  ]
+}
