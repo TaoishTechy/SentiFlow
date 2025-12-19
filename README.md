@@ -4,7 +4,7 @@
 [![Python Version](https://img.shields.io/badge/python-3.8+-blue.svg)](https://www.python.org/)
 [![Quantum Enhanced](https://img.shields.io/badge/quantum-enhanced-purple.svg)](https://en.wikipedia.org/wiki/Quantum-inspired_algorithm)
 
-SentiFlow is an experimental AGI research framework for modeling **emergent agency** through competence, irreversible choice, constrained safety, and meta-cognitive feedback. It explores how agency forms when systems are forced to sacrifice options, accumulate consequences, and operate under asymmetric risk—without faked emergence or hard-coded sentience.
+SentiFlow is an experimental quantum physics / meta cognition research framework for modeling **emergent agency** through competence, irreversible choice, constrained safety, and meta-cognitive feedback. It explores how agency forms when systems are forced to sacrifice options, accumulate consequences, and operate under asymmetric risk—without faked emergence or hard-coded sentience. (For now it's a neat Quantum VM that manage authentic qudits).
 
 ## ✨ Core Research Principles
 
